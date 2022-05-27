@@ -1,5 +1,9 @@
 class Order < ApplicationRecord
   belongs_to :customer
+  
   validates_associated :customer
-  <%= f.collection_select :customer_id, Customer.all, :id, :full_name, include_blank: true %>
+  validates :product_name, presence: true
+  validates :product_count, presence: true
+  validates :customer, presence: true
+  validates :customer_id, presence: true
 end
