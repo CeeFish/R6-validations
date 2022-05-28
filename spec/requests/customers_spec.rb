@@ -20,16 +20,15 @@ RSpec.describe "CustomersControllers", type: :request do
   end
   describe "get new_customer_path" do
     it "renders the :new template" do
-      customer = FactoryBot.create(:customer)
-      get customer_path(id: customer.id)
-      expect(response).to render_template(:show)
+      get new_customer_path
+      expect(response).to render_template(:new)
     end
   end
   describe "get edit_customer_path" do
     it "renders the :edit template" do
       customer = FactoryBot.create(:customer)
-      get customer_path(id: customer.id)
-      expect(response).to render_template(:show)
+      get edit_customer_path(id: customer.id)
+      expect(response).to render_template(:edit)
     end
   end
   describe "post customers_path with valid data" do
@@ -51,11 +50,12 @@ RSpec.describe "CustomersControllers", type: :request do
   end
   describe "put customer_path with valid data" do
     it "updates an entry and redirects to the show path for the customer" do
-      customer = FactoryBot.create(:customer)
-      put customer_path(customer.id), params: {customer: {phone: "8889995678"}}
-      customer.reload
+      customer = FactoryBot.create(:customer, phone: "8889995678")
       expect(customer.phone).to eq("8889995678")
-      expect(response).to redirect_to customer_path(id: Customer.last.id)
+      put customer_path(customer.id), params: {customer: {phone: "8889995699"}}
+      customer.reload
+      expect(customer.phone).to eq("8889995699")
+      expect(response).to redirect_to customer_path(id: Customer.id)
     end
   end
   describe "put customer_path with invalid data" do
