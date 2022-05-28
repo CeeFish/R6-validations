@@ -4,6 +4,4 @@ class Order < ApplicationRecord
   validates_associated :customer
   validates :product_name, presence: true
   validates :product_count, presence: true
-  validates :customer, presence: true
-  validates :customer_id, presence: true
 end

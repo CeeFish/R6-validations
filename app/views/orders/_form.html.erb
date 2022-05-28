@@ -22,7 +22,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :customer_id %>
+    <%= form.label :customer %>
     <%= form.collection_select :customer_id, Customer.all, :id, :full_name, include_blank: true %>
   </div>
 
