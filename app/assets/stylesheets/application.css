@@ -28,3 +28,11 @@
 h1 {
     font-family: 'Acme';
 }
+
+.card {
+    border-color: black;
+}
+
+.btn {
+    color: black;
+}
