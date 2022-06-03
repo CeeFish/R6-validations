@@ -1,19 +1,27 @@
- <p id="notice"><%= notice %></p>
+<div class="col-md-4">
+  <div class="card mt-2 mb-2 rounded">
+    <div class="card-body">
 
-<p>
-  <strong>Product Name:</strong>
-  <%= @order.product_name %>
-</p>
+      <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Product Count:</strong>
-  <%= @order.product_count %>
-</p>
+      <p>
+        <strong>Product Name:</strong>
+        <%= @order.product_name %>
+      </p>
 
-<p>
-  <strong>Customer:</strong>
-  <%= @order.customer.full_name %>
-</p>
+      <p>
+        <strong>Product Count:</strong>
+        <%= @order.product_count %>
+      </p>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+      <p>
+        <strong>Customer:</strong>
+        <%= @order.customer.full_name %>
+      </p>
+
+      <%= link_to 'Edit', edit_order_path(@order), class: "btn btn-primary" %> |
+      <%= link_to 'Back', orders_path, class: "btn btn-primary" %>
+
+    </div>
+  </div>
+</div>

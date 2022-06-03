@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
   end
 
   # GET /orders/1/edit
-  def editz
+  def edit
   end
 
   # POST /orders or /orders.json
